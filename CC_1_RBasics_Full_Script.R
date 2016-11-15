@@ -15,10 +15,13 @@ edidiv <- read.csv("~/edidiv.csv")
 # Before we start analysing the data, we will check whether it imported the way we want it to. Check that the column titles are imported as such, sometimes R thinks they are values. Are there any NA values, empty columns? When entering data in Excel, make sure that when you delete values, you right click and select delete, as opposed to just pressing delete on your keyboard - that way the values and the space they occupied are truly gone and there won't be empty columns in R later.
 # When choosing column titles, don't use spaces and keep them simple - you will be retyping them a lot in your code, so better not call them something super long.
 
-# It's good practice to always do this - this code displays the first and last data records, as well as a summary of the data
+# It's good practice to always do this - this code displays the first and last data records, the types of variables, number of rows and columns, a summary of the data
 head(edidiv)
 tail(edidiv)
+str(edidiv)
+dim(edidiv)
 summary(edidiv)
+summary(edidiv$taxonGroup)
 
 # In the summary output, you can check whether your continuous variables are taken as such
 # Categorical variables are actual categories
