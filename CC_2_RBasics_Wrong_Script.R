@@ -1,8 +1,13 @@
 # Importing Edinburgh Biodiversity Data, publicly available from the NBN Gateway https://data.nbn.org.uk/
 
+# Add informative header
+
+# Add libraries for packages
+
+# Insert code to import data here
 
 # It's good practice to always check your imported data before starting analysis
-head(edidiv)
+Head(edidiv)
 tail(edidiv)
 str(edidiv)
 dim(edidin)
@@ -13,15 +18,15 @@ summary(edidiv)
 # Here we are only hinting to all the cool stuff we can do with dplyr - we will learn more in later tutorials.
 
 Beetle <- filter(edidiv taxonGroup == "Beetle")
-Bird <- filter(edidiv, taxonGroup == "Bird")
-Butterfly <- filter(edidiv, taxonGroup == "Butterfly")
+Bird <- filter(edidiv, taxonGroup = "Bird")
+Butterfly <- filter(edidiv, taxonGroup == "Buterfly")
 FloweringPlants <- filter(edidiv, taxonGroup == "Flowering.Plants")
 Fungus <- filter(edidiv, taxonGroup == "Fungus")
 Hymenopteran <- filter(edidiv, taxonGroup == "Hymenopteran")
 Lichen <- filter(edidiv, taxonGroup == "Lichen")
-Liverwort <- filter(edidiv, taxonGroup == "Liverwort")
+Liverwort <- filter(edidiv, taxonGroup == Liverwort")
 Mammal <- filter(edidiv, taxonGroup == "Mammal")
-Mollusc <- filter(edidiv, taxonGroup == "Mollusc"))
+Mollusc <- filter(edidiv, taxonGroup == "mollusc"))
 
 # To find out the number of different species in each taxa, we will use the function unique() together (length)
 
@@ -30,11 +35,11 @@ b <- length(unique(Bird$taxonName))
 c <- length(unique(Butterfly$taxonName))
 d <- length(unique(Dragonfly$taxonName))
 e <- length(unique(Flowering.Plants$taxonName))
-f <- length(unique(Fungus$taxonName))
+f <- length(unique(Fungus$TaxonName))
 g <- length(unique(Hymenopteran$taxon.Name))
 h <- length(unique(Lichen$taxonName))
 i <- length(unique(Liverwort$taxonName))
-j <- length(unique(Mammal$taxonName))
+j <- length(unique(Mammal$taxonname))
 k <- length(unique(Mollusc$taxonName))
 
 # We can now combine all those object in one vector using the c() function and add labels using names() 
@@ -58,14 +63,12 @@ barplot(as.matrix(biodiv))
 # Add in axis titles 
 # Make all column labels visible
 # Set the limits for the y axis
-# We can use the help() function to figure out what code we can add in to fix the issues
-help(barplot)
-help(par)
 
 # We also want to save our plot
 png("barplot.png", width=950, height=500)
 barplot(biodiv, xlab="Taxa" ylab="Number of species", ylim=c(0,900), cex.axis=1.5, cex.lab=1.5)
 dev.off()
+
 # The plot has been saved in your working directory
 # To confirm where that was, you can use getwd(), and to change it, you can use setwd()
 getwd()
@@ -94,7 +97,7 @@ write.csv(biodata, file="biodata.csv")
 # We need to tell the barplot() function exactly what we want it to plot, in our case the richness
 png("barplot2.png", width=950, height=500)
 barplot(biodata$richness, names.arg=c("Beetle", 
-                                      "Bird", 
+                                      Bird",, 
                                       "Butterfly", 
                                       "Dragonfly", 
                                       "Fl.Plants", 
@@ -103,8 +106,8 @@ barplot(biodata$richness, names.arg=c("Beetle",
                                       "Lichen", 
                                       "Liverwort", 
                                       "Mammal", 
-                                      "Mollusc"),
-        xlab="Taxa", ylab="Number of species", ylim=c(0,600), cex.axis=1.5, cex.lab=1.5)
+                                      "Mollusc")),
+        xlab=Taxa", ylab="Number of species", ylim=c(0,600), cex.axis=1.5, cex.lab=1.5)
 dev.off()
 
 # In this tutorial we found out how many species from a range of taxa have been recorded in Edinburgh.
