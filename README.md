@@ -5,7 +5,9 @@ This repository contains the files necessary to complete Coding Club's first tut
 
 The data were downloaded from the NBN Gateway https://data.nbn.org.uk/ for educational purposes.
 
-For more about Codign Club, please see https://ourcodingclub.github.io/
+For more about Coding Club, please see https://ourcodingclub.github.io/
+
+Check out https://ourcodingclub.github.io/workshop/ to learn how you can get involved!
 
 We would love to hear your feedback on the tutorial, whether you did it at a Coding Club workshop or online: 
 https://www.surveymonkey.co.uk/r/6CQF3J7
